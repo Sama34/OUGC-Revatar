@@ -125,7 +125,7 @@ function ougc_revatar_activate()
 
 	// Add template group
 	$PL->templates('ougcrevatar', '<lang:setting_group_ougc_revatar>', array(
-		''	=> '<img src="{$settings[\'bburl\']}/{$post[\'ougc_revatar\']}" alt=""{$avatar_width_height} />'
+		''	=> '<img src="{$settings[\'bburl\']}/{$revatar[\'image\']}" alt="{$revatar[\'username\']}" title="{$revatar[\'username\']}" width="{$revatar[\'width\']}" height="{$revatar[\'height\']}" />'
 	));
 
 	// Modify templates
@@ -397,6 +397,7 @@ function ougc_revatar_postbit(&$post)
 
 	$revatar = array(
 		'image'		=> htmlspecialchars_uni($post['ougc_revatar']),
+		'username'	=> htmlspecialchars_uni($post['username']),
 		'width'		=> isset($scaled['width']) ? $scaled['width'] : (int)$dims[0],
 		'height'	=> isset($scaled['height']) ? $scaled['height'] : (int)$dims[1],
 	);
