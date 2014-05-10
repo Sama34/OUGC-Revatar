@@ -64,7 +64,7 @@ else
 			$templatelist .= ',';
 		}
 
-		$templatelist .= 'ougc_revatar';
+		$templatelist .= 'ougcrevatar';
 	}
 }
 
